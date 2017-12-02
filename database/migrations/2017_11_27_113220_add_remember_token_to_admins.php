@@ -15,7 +15,7 @@ class AddRememberTokenToAdmins extends Migration
     {
         Schema::table('admins', function (Blueprint $table) {
             //
-            $table->string('remember_token');
+            $table->string('remember_token')->nullable();
         });
     }
 
