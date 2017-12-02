@@ -19,15 +19,29 @@
             <!-- end news-feed -->
             <!-- begin right-content -->
             <div class="right-content">
+
                 <!-- begin login-header -->
                 <div class="login-header">
+                    <div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown navbar-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="{{ asset('asset_admin/assets/img/user-1.jpg') }}" alt="" />
+                                <span class="hidden-xs">语言切换</span> <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInLeft">
+                                <li class="arrow"></li>
+                                <li><a href="">中文</a></li>
+                                <li><a href="#">英文</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </div>
                     <div class="brand">
                         <span class="logo"></span> Backend
                         <small>Login</small>
                     </div>
-                    <div class="icon">
-                        <i class="fa fa-sign-in"></i>
-                    </div>
+
                 </div>
                 <!-- end login-header -->
                 <!-- begin login-content -->

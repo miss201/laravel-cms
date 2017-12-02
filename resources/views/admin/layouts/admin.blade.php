@@ -61,63 +61,16 @@
                         </div>
                     </form>
                 </li>
-                <li class="dropdown">
-                    <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle f-s-14">
-                        <i class="fa fa-bell-o"></i>
-                        <span class="label">5</span>
+
+                <li class="dropdown navbar-user">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="{{ asset('asset_admin/assets/img/user-1.jpg') }}" alt="" />
+                        <span class="hidden-xs">语言切换</span> <b class="caret"></b>
                     </a>
-                    <ul class="dropdown-menu media-list pull-right animated fadeInDown">
-                        <li class="dropdown-header">通知 (5)</li>
-                        <li class="media">
-                            <a href="javascript:;">
-                                <div class="media-left"><i class="fa fa-bug media-object bg-red"></i></div>
-                                <div class="media-body">
-                                    <h6 class="media-heading">服务器错误报告</h6>
-                                    <div class="text-muted f-s-11">3分钟之前</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="media">
-                            <a href="javascript:;">
-                                <div class="media-left"><img src="{{ asset('asset_admin/assets/img/user-1.jpg') }}" class="media-object" alt="" /></div>
-                                <div class="media-body">
-                                    <h6 class="media-heading">约翰·史密斯</h6>
-                                    <p>今天完成最后的开发计划</p>
-                                    <div class="text-muted f-s-11">25分钟之前</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="media">
-                            <a href="javascript:;">
-                                <div class="media-left"><img src="{{ asset('asset_admin/assets/img/user-2.jpg') }}" class="media-object" alt="" /></div>
-                                <div class="media-body">
-                                    <h6 class="media-heading">约翰·史密斯</h6>
-                                    <p>今天完成最后的开发计划</p>
-                                    <div class="text-muted f-s-11">35分钟之前</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="media">
-                            <a href="javascript:;">
-                                <div class="media-left"><i class="fa fa-plus media-object bg-green"></i></div>
-                                <div class="media-body">
-                                    <h6 class="media-heading">新用户注册</h6>
-                                    <div class="text-muted f-s-11">1小时之前</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="media">
-                            <a href="javascript:;">
-                                <div class="media-left"><i class="fa fa-envelope media-object bg-blue"></i></div>
-                                <div class="media-body">
-                                    <h6 class="media-heading">来自John的邮件</h6>
-                                    <div class="text-muted f-s-11">2小时之前</div>
-                                </div>
-                            </a>
-                        </li>
-                        {{--<li class="dropdown-footer text-center">
-                            <a href="javascript:;">View more</a>
-                        </li>--}}
+                    <ul class="dropdown-menu animated fadeInLeft">
+                        <li class="arrow"></li>
+                        <li><a href="javascript:;">中文</a></li>
+                        <li><a href="#">英文</a></li>
                     </ul>
                 </li>
                 <li class="dropdown navbar-user">
@@ -127,8 +80,6 @@
                     </a>
                     <ul class="dropdown-menu animated fadeInLeft">
                         <li class="arrow"></li>
-                        {{--<li><a href="javascript:;">Edit Profile</a></li>--}}
-                        {{--<li><a href="javascript:;"><span class="badge badge-danger pull-right">2</span> Inbox</a></li>--}}
                         <li><a href="javascript:;">Calendar</a></li>
                         <li><a href="{{url('admin/setting/index')}}">Setting</a></li>
                         <li class="divider"></li>
