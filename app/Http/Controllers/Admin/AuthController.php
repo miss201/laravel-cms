@@ -35,7 +35,6 @@ class AuthController extends Controller
                 } else {
                     return back()->with('error', '账号或密码错误，请确认后再输入')->withInput();
                 }
-
             }
         } else {
             return view('admin.auth.index');

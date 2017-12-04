@@ -11,16 +11,9 @@
 
 @section('admin-content')
     <div id="content" class="content">
-        <!-- begin breadcrumb -->
-        <ol class="breadcrumb pull-right">
-            <li><a href="javascript:;">Home</a></li>
-            <li><a href="javascript:;">Tables</a></li>
-            <li class="active">Basic Tables</li>
-        </ol>
-        <!-- end breadcrumb -->
         <!-- begin page-header -->
-        <h1 class="page-header">日志列表
-            <small>Storage Logs.</small>
+        <h1 class="page-header">{{trans('menu.dashboard')}}
+            <small>{{trans('menu.logList')}}</small>
         </h1>
         <!-- end page-header -->
         <!-- begin row -->
@@ -38,16 +31,16 @@
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning"
                                data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                         </div>
-                        <h4 class="panel-title">列表</h4>
+                        <h4 class="panel-title">{{trans('menu.list')}}</h4>
                     </div>
                     <div class="panel-body">
                         <table class="table table-bordered table-hover" id="datatable">
                             <thead>
                             <tr>
-                                <th>文件名称</th>
-                                <th>文件大小</th>
-                                <th>更新时间</th>
-                                <th>操作</th>
+                                <th>{{trans('menu.fileName')}}</th>
+                                <th>{{trans('menu.size')}}</th>
+                                <th>{{trans('menu.updateTime')}}</th>
+                                <th>{{trans('menu.operation')}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -59,10 +52,10 @@
                                     <td>
                                         <div class="btn-group btn-group-xs">
                                             <a class="btn btn-primary"
-                                               href="{{url('admin/log/download',base64_encode($log['getFilename']))}}">下载</a>
+                                               href="{{url('admin/log/download',base64_encode($log['getFilename']))}}">{{trans('menu.download')}}</a>
                                             <a class="btn btn-success"
-                                               href="{{url('admin/log/read',base64_encode($log['getFilename']))}}">查看</a>
-                                            <a class="btn btn-danger destroy" siteurl="{{url('admin/log/delete',base64_encode($log['getFilename']))}}">删除</a>
+                                               href="{{url('admin/log/read',base64_encode($log['getFilename']))}}">{{trans('menu.view')}}</a>
+                                            <a class="btn btn-danger destroy" siteurl="{{url('admin/log/delete',base64_encode($log['getFilename']))}}">{{trans('menu.delete')}}</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -86,8 +79,8 @@
             $('.destroy').on('click', function(){
                 var url = $(this).attr('siteurl')||'';
                 //询问框
-                layer.confirm('确认删除该信息？', {
-                    btn: ['是', '否'] //按钮
+                layer.confirm("{{trans('menu.confirmToDelete')}}", {
+                    btn: ["{{trans('menu.yes')}}", "{{trans('menu.no')}}"] //按钮
                 }, function () {
                     $.ajax({
                         url: url,
@@ -99,10 +92,10 @@
                         dataType: 'text',
                         success: function (data) {
                             if (data == "success") {
-                                layer.msg('删除成功');
+                                layer.msg("{{trans('menu.deleteSuccess')}}");
                                 window.location.reload();
                             }else{
-                                layer.msg('删除失败');
+                                layer.msg("{{trans('menu.deleteFail')}}");
                             }
                             parent.layer.close(index);
 

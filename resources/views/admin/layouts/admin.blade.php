@@ -5,13 +5,12 @@
 <!--<![endif]-->
 <head>
     <meta charset="utf-8" />
-    <title>CMS-管理后台</title>
+    <title>{{trans('messages.backend')}}</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
 
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <link href="{{ asset('asset_admin/assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('asset_admin/assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('asset_admin/assets/plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
@@ -25,7 +24,6 @@
     <script src="{{ asset('asset_admin/assets/plugins/pace/pace.min.js') }}"></script>
     <script src="{{ asset('asset_admin/assets/plugins/jquery/jquery-1.9.1.min.js') }}"></script>
     <script type="text/javascript" src="{{asset('layer/layer.js')}}"></script>
-    {{--<script type="text/javascript" src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>--}}
     @yield('admin-css')
     <!-- ================== END BASE JS ================== -->
 </head>
@@ -42,7 +40,7 @@
         <div class="container-fluid">
             <!-- begin mobile sidebar expand / collapse button -->
             <div class="navbar-header">
-                <a href="{{ url('admin') }}" class="navbar-brand"><span class="navbar-logo"></span> 111</a>
+                <a href="{{ url('admin') }}" class="navbar-brand"><span class="navbar-logo"></span> {{trans('messages.backend')}}</a>
                 <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -56,21 +54,19 @@
                 <li>
                     <form class="navbar-form full-width">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="关键字" />
+                            <input type="text" class="form-control" placeholder="{{trans('messages.keywords')}}" />
                             <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
                         </div>
                     </form>
                 </li>
-
                 <li class="dropdown navbar-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="{{ asset('asset_admin/assets/img/user-1.jpg') }}" alt="" />
-                        <span class="hidden-xs">语言切换</span> <b class="caret"></b>
+                        <span class="hidden-xs">{{trans('messages.languageSwitching')}}</span> <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu animated fadeInLeft">
-                        <li class="arrow"></li>
-                        <li><a href="javascript:;">中文</a></li>
-                        <li><a href="#">英文</a></li>
+                        <li><a  siteUrl="{{url('admin/lang','en')}}" class="lang">{{trans('messages.lang-en')}}</a></li>
+                        <li><a  siteUrl="{{url('admin/lang','zh')}}" class="lang">{{trans('messages.lang-zh')}}</a></li>
                     </ul>
                 </li>
                 <li class="dropdown navbar-user">
@@ -80,10 +76,11 @@
                     </a>
                     <ul class="dropdown-menu animated fadeInLeft">
                         <li class="arrow"></li>
-                        <li><a href="javascript:;">Calendar</a></li>
-                        <li><a href="{{url('admin/setting/index')}}">Setting</a></li>
+                        <li><a href="javascript:;">{{trans('messages.editProfile')}}</a></li>
+                        <li><a href="javascript:;">{{trans('messages.calendar')}}</a></li>
+                        <li><a href="{{url('admin/setting/index')}}">{{trans('messages.siteSetting')}}</a></li>
                         <li class="divider"></li>
-                        <li><a href="{{ url('admin/logout') }}">Log Out</a></li>
+                        <li><a href="{{ url('admin/logout') }}">{{trans('messages.logout')}}</a></li>
                     </ul>
                 </li>
             </ul>
@@ -132,6 +129,29 @@
 <script>
     $(document).ready(function() {
         App.init();
+    });
+    $(function () {
+        //删除
+        $('.lang').on('click', function(){
+            var url = $(this).attr('siteUrl')|| "";
+            alert(url);
+            //询问框
+            $.ajax({
+                url: url,
+                type: 'post',
+                cache: false,
+                data: {
+                    '_token': "{{csrf_token()}}"
+                },
+                dataType: 'text',
+                success: function (data) {
+                    if (data == "success") {
+                        window.location.reload();
+                    }else{
+                    }
+                }
+            })
+        });
     });
 </script>
 </body>

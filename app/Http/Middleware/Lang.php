@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\App;
 
-class Lang
+class lang
 {
     /**
      * Handle an incoming request.
@@ -16,6 +16,7 @@ class Lang
      */
     public function handle($request, Closure $next)
     {
+//        echo session('lang');exit();
         if (session('lang')) {
             App::setLocale(session('lang'));
         }

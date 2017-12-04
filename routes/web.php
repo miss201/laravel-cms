@@ -37,6 +37,9 @@ Route::group(['middleware' => ['web']], function () {
         //网站配置
         Route::get('setting/index', 'SettingController@index');
         Route::post('setting/save', 'SettingController@save');
+
+        //语言切换
+        Route::post('lang/{lang}','LangController@change');
     });
 });
 

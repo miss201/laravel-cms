@@ -7,10 +7,10 @@
             <!-- begin news-feed -->
             <div class="news-feed">
                 <div class="news-image">
-                    <img src="{{ asset('asset_admin/assets/img/login-bg/bg-7.jpg') }}" data-id="login-cover-image" alt="" />
+                    <img src="{{ asset('asset_admin/assets/img/login-bg/timg.jpg') }}" data-id="login-cover-image" alt="" />
                 </div>
                 <div class="news-caption">
-                    <h4 class="caption-title"><i class="fa fa-diamond text-success"></i> XXX-CMS</h4>
+                    <h4 class="caption-title"><i class="fa fa-diamond text-success"></i> {{trans('messages.backend')}}</h4>
                     <p>
                         XXXX
                     </p>
@@ -21,13 +21,27 @@
             <div class="right-content">
                 <!-- begin login-header -->
                 <div class="login-header">
+                    <div>
+                        <ul class="nav navbar-nav navbar-right">
+
+                            <li class="dropdown navbar-user">
+                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="{{ asset('asset_admin/assets/img/user-1.jpg') }}" alt="" />
+                                    <span class="hidden-xs">{{ trans('messages.languageSwitching') }}</span> <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu animated fadeInLeft">
+                                    <li><a  siteUrl="{{url('admin/lang','en')}}" class="lang">{{trans('messages.lang-en')}}</a></li>
+                                    <li><a  siteUrl="{{url('admin/lang','zh')}}" class="lang">{{trans('messages.lang-zh')}}</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
                     <div class="brand">
-                        <span class="logo"></span> CMS ADMIN
-                        <small>Register</small>
+                        <span class="logo"></span> {{trans('messages.backend')}}
+                        <small>{{trans('messages.reg')}}</small>
                     </div>
-                    <div class="icon">
-                        <i class="fa fa-sign-in"></i>
-                    </div>
+
                 </div>
                 <!-- end login-header -->
                 <!-- begin login-content -->
@@ -44,18 +58,18 @@
                     <form action="{{ url('admin/register') }}" method="POST" class="margin-bottom-0">
                         {{ csrf_field() }}
                         <div class="form-group m-b-15">
-                            <input type="text" name="name" class="form-control input-lg" placeholder="用户名" value="{{ old('name') }}"/>
+                            <input type="text" name="name" class="form-control input-lg" placeholder="{{trans('messages.name')}}" value="{{ old('name') }}"/>
                         </div>
                         <div class="form-group m-b-15">
-                            <input type="text" name="email" class="form-control input-lg" placeholder="邮箱" value="{{ old('email') }}"/>
+                            <input type="text" name="email" class="form-control input-lg" placeholder="{{trans('messages.email')}}" value="{{ old('email') }}"/>
                         </div>
 
                         <div class="form-group m-b-15">
-                            <input type="password" name="password" class="form-control input-lg" placeholder="密码" />
+                            <input type="password" name="password" class="form-control input-lg" placeholder="{{trans('messages.password')}}" />
                         </div>
 
                         <div class="login-buttons">
-                            <button type="submit" class="btn btn-success btn-block btn-lg">注 册</button>
+                            <button type="submit" class="btn btn-success btn-block btn-lg">{{trans('messages.reg')}}</button>
                         </div>
                         <div class="m-t-20 m-b-40 p-b-40">
                             登录? 请点击 <a href="{{url('admin/login')}}" class="text-success">这里</a> 进行登录.

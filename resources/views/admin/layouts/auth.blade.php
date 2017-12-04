@@ -45,15 +45,39 @@
 <![endif]-->
 <script src="{{ asset('asset_admin/assets/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
 <script src="{{ asset('asset_admin/assets/plugins/jquery-cookie/jquery.cookie.js') }}"></script>
+<script type="text/javascript" src="{{asset('layer/layer.js')}}"></script>
 <!-- ================== END BASE JS ================== -->
 
 <!-- ================== BEGIN PAGE LEVEL JS ================== -->
 <script src="{{ asset('asset_admin/assets/js/apps.min.js') }}"></script>
 <!-- ================== END PAGE LEVEL JS ================== -->
-
+@yield('auth-js')
 <script>
     $(document).ready(function() {
         App.init();
+    });
+
+    $(function () {
+        //删除
+        $('.lang').on('click', function(){
+            var url = $(this).attr('siteUrl')|| "";
+            //询问框
+            $.ajax({
+                url: url,
+                type: 'post',
+                cache: false,
+                data: {
+                    '_token': "{{csrf_token()}}"
+                },
+                dataType: 'text',
+                success: function (data) {
+                    if (data == "success") {
+                        window.location.reload();
+                    }else{
+                    }
+                }
+            })
+        });
     });
 </script>
 </body>
