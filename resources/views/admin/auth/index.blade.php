@@ -67,6 +67,9 @@
                         <div class="form-group m-b-15">
                             <input type="password" name="password" class="form-control input-lg" placeholder="{{trans('messages.password')}}" />
                         </div>
+                        <div class="form-group m-b-15">
+                            <input type="text" name="code" class="form-control input-inline" placeholder="验证码"/>
+                        </div>
                         {{--<div class="checkbox m-b-30">--}}
                             {{--<label>--}}
                                 {{--<input name="remember" type="checkbox" /> 记住密码--}}

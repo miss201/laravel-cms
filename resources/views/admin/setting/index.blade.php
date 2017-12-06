@@ -8,15 +8,9 @@
 
 @section('admin-content')
     <div id="content" class="content">
-        <!-- begin breadcrumb -->
-        <ol class="breadcrumb pull-right">
-            <li><a href="javascript:;">Home</a></li>
-            <li><a href="javascript:;">Form Stuff</a></li>
-            <li class="active">Form Validation</li>
-        </ol>
-        <!-- end breadcrumb -->
+
         <!-- begin page-header -->
-        <h1 class="page-header">网站配置 <small>Settings</small></h1>
+        <h1 class="page-header">{{trans('menu.dashboard')}}<small> {{trans('messages.siteSetting')}}</small></h1>
         <!-- end page-header -->
 
         <!-- begin row -->
@@ -32,7 +26,7 @@
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                         </div>
-                        <h4 class="panel-title">Basic Form Validation</h4>
+                        <h4 class="panel-title">{{trans('messages.siteSetting')}}</h4>
                     </div>
                     @if(count($errors)>0)
                         <div class="alert alert-danger">
@@ -53,18 +47,18 @@
                     <div class="panel-body panel-form">
                         <form class="form-horizontal form-bordered" data-parsley-validate="true" action="{{url('admin/setting/save')}}" method="POST">
                             {{ csrf_field() }}
-
+                            {{--{{ method_field('PATCH') }}--}}
                             <div class="form-group">
-                                <label class="control-label col-md-2 col-sm-2" for="APP_URL">网址 * :</label>
+                                <label class="control-label col-md-2 col-sm-2" for="APP_URL">{{trans('messages.siteUrl')}} * :</label>
                                 <div class="col-md-4 col-sm-4">
-                                    <input class="form-control" type="text" name="APP_URL" placeholder="网址" data-parsley-required="true" data-parsley-required-message="请输入网址" value="{{$envinfo['APP_URL']}}"/>
+                                    <input class="form-control" type="text" name="APP_URL" placeholder="{{trans('messages.siteUrl')}}" data-parsley-required="true"  data-parsley-required-message="{{trans('messages.enterSiteUrl')}}" value="{{$envinfo['APP_URL']}}"/>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2 col-sm-2"></label>
                                 <div class="col-md-4 col-sm-4">
-                                    <button type="submit" class="btn btn-primary">提交</button>
+                                    <button type="submit" class="btn btn-primary">{{trans('messages.submit')}}</button>
                                 </div>
                             </div>
                         </form>
@@ -79,6 +73,8 @@
 @endsection
 
 @section('admin-js')
+    <script src="{{ asset('asset_admin/assets/plugins/parsley/dist/parsley.js') }}"></script>
+    <script src="{{ asset('asset_admin/assets/plugins/switchery/switchery.min.js') }}"></script>
     <script>
 
     </script>

@@ -16,14 +16,14 @@
         <!-- end sidebar user -->
         <!-- begin sidebar nav -->
         <ul class="nav">
-            <li class="has-sub active">
-                <a href="{{url('admin/index')}}"><b class="glyphicon glyphicon-dashboard"></b><span>{{trans('menu.dashboard')}}</span></a>
+            <li class="has-sub ">
+                <a href="{{url('admin/index')}}"><b class="glyphicon glyphicon-dashboard"></b><span> {{trans('menu.dashboard')}}</span></a>
             </li>
-            <li class="has-sub">
-                <a href="javascript:;"><b class="glyphicon glyphicon-th-large"></b><span>{{trans('menu.systemSettings')}}</span></a>
+            <li class="has-sub active">
+                <a href="javascript:;"><b class="glyphicon glyphicon-th-large"></b><span> {{trans('menu.systemSettings')}}</span></a>
                 <ul class="sub-menu">
                     <li class="has-sub "><a href="{{url('admin/admin')}}"><b class="caret pull-right"></b>{{trans('menu.userMgmt')}}</a></li>
-                    <li class="has-sub "><a href="{{url('admin/log')}}"><b class="caret pull-right"></b>{{trans('menu.logMgmt')}}</a></li>
+                    <li class="has-sub active"><a href="{{url('admin/log')}}"><b class="caret pull-right"></b>{{trans('menu.logMgmt')}}</a></li>
                     {{--<li><a href="{{url('admin/menu')}}"><b class="caret pull-right"></b>菜单管理</a></li>--}}
                     {{--<li><a href="{{url('admin/role')}}"><b class="caret pull-right"></b>角色管理</a></li>--}}
                     {{--<li><a href="#"><b class="caret pull-right"></b>用户管理</a></li>--}}

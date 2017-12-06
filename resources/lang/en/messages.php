@@ -22,4 +22,12 @@ return [
     'calendar' => 'Calendar',
     'siteSetting' => 'Site Setting',
     'logout' => 'Log Out',
+    'loginSucess'=>'Login Success',
+    'loginError'=>'Account or password is wrong, please confirm before entering.',
+    'registerSuccess'=>'Register Success',
+    'siteUrl'=>'Site URL',
+    'submit'=>'Submit',
+    'editSuccess'=>'Edit Success',
+    'enterSiteUrl'=>'SiteUrl is required',
+
 ];

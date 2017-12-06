@@ -26,4 +26,5 @@ return [
     'no'=>'No',
     'deleteSuccess'=>'Delete Success.',
     'deleteFail'=>'Delete Fail.',
+
 ];

@@ -31,9 +31,9 @@ class AuthController extends Controller
                 return back()->withErrors($validator)->withInput();
             } else {
                 if (Auth::guard('admin')->attempt(['email' => $this->request->email, 'password' => $this->request->password])) {
-                    return Redirect::to('/admin/index')->with('success', '登录成功！');
+                    return Redirect::to('/admin/index')->with('success', trans('messages.loginSucess'));
                 } else {
-                    return back()->with('error', '账号或密码错误，请确认后再输入')->withInput();
+                    return back()->with('error', trans('messages.loginError'))->withInput();
                 }
             }
         } else {
@@ -62,7 +62,7 @@ class AuthController extends Controller
     {
         if ($this->request->isMethod('post')) {
             $admin = $this->adminContainer->addAdmin($this->request->input('name'), $this->request->input('email'), $this->request->input('password'));
-            return Redirect::to('admin/login')->with('success', '注册成功请登录');
+            return Redirect::to('admin/login')->with('success', trans('messages.registerSuccess'));
         } else {
             return view('admin.auth.register');
         }
@@ -74,7 +74,7 @@ class AuthController extends Controller
      */
     public function logout()
     {
-        if(Auth::guard('admin')->user()){
+        if (Auth::guard('admin')->user()) {
             Auth::guard('admin')->logout();
         }
         return view('admin.auth.index');

@@ -26,4 +26,5 @@ return [
     'no'=>'否',
     'deleteSuccess'=>'删除成功',
     'deleteFail'=>'删除失败',
+
 ];

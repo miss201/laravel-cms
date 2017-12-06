@@ -22,4 +22,11 @@ return [
     'calendar' => '日历',
     'siteSetting' => '网站设置',
     'logout' => '登出',
+    'loginSucess'=>'登录成功！',
+    'loginError'=>'账号或密码错误，请确认后再输入',
+    'registerSuccess'=>'注册成功请登录',
+    'siteUrl'=>'网址',
+    'submit'=>'提交',
+    'editSuccess'=>'修改成功',
+    'enterSiteUrl'=>'请输入网址',
 ];

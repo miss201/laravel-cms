@@ -24,7 +24,7 @@ class SettingController extends Controller
         $data = $this->request->input();
         array_shift($data);
         \App\Helpers\modifyEnv($data);
-        return redirect('admin/setting/index')->with('success', '修改成功！');
+        return redirect('admin/setting/index')->with('success', trans('messages.editSuccess'));
     }
 
 }
