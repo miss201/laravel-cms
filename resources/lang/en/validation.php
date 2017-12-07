@@ -116,6 +116,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'code'=>'Code'
+    ],
 
 ];

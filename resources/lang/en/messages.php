@@ -29,5 +29,8 @@ return [
     'submit'=>'Submit',
     'editSuccess'=>'Edit Success',
     'enterSiteUrl'=>'SiteUrl is required',
+    'code'=>'code',
+    'refreshImg'=>'Refresh Code',
+    'codeError'=>'Code is wrong,please confirm before entering',
 
 ];

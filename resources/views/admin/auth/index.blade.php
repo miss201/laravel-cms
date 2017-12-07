@@ -68,7 +68,8 @@
                             <input type="password" name="password" class="form-control input-lg" placeholder="{{trans('messages.password')}}" />
                         </div>
                         <div class="form-group m-b-15">
-                            <input type="text" name="code" class="form-control input-inline" placeholder="验证码"/>
+                            <input type="text" name="code" class="form-control input-inline" placeholder="{{trans('messages.code')}}"/>
+                            <a onclick="javascript:re_captcha();" class=""><img src="{{url('admin/captcha/1')}}" id="c2c98f0de5a04167a9e427d883690ff6" class="img-thumbnail"  alt="{{trans('messages.code')}}" title="{{trans('messages.refreshImg')}}"></a>
                         </div>
                         {{--<div class="checkbox m-b-30">--}}
                             {{--<label>--}}
@@ -99,6 +100,10 @@
 
 @section('auth-js')
     <script>
-
+        function re_captcha() {
+            $url = "{{ URL('admin/captcha') }}";
+            $url = $url + "/" + Math.random();
+            document.getElementById('c2c98f0de5a04167a9e427d883690ff6').src=$url;
+        }
     </script>
 @endsection

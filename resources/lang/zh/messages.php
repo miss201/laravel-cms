@@ -29,4 +29,7 @@ return [
     'submit'=>'提交',
     'editSuccess'=>'修改成功',
     'enterSiteUrl'=>'请输入网址',
+    'code'=>'验证码',
+    'refreshImg'=>'刷新验证码',
+    'codeError'=>'验证码错误'
 ];

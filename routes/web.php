@@ -40,6 +40,9 @@ Route::group(['middleware' => ['web']], function () {
 
         //语言切换
         Route::post('lang/{lang}','LangController@change');
+
+        //验证码
+        Route::get('captcha/{tmp}','CodeController@captcha');
     });
 });
 
