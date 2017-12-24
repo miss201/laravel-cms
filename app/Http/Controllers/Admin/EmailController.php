@@ -32,9 +32,8 @@ class EmailController extends Controller
             $content = $this->request->input('content');
             $to = $this->request->input('email');
             $theme = $this->request->input('theme');
-            $this->dispatch(new SendEmail($to,$theme,$content));
-//            $info = empty(Mail::failures()) ? '发送成功' : '发送失败';
-            $info='Success';
+            $flag = $this->dispatch(new SendEmail($to, $theme, $content));
+            $info = isset($flag) ? trans('messages.SendSuccess') : trans('messages.SendFail');
             return Redirect::to('admin/email/index')->with('success', $info);
 
         }

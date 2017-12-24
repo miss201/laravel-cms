@@ -35,5 +35,7 @@ return [
     'enterRecevierEmail'=>'Pls Enter Email',
     'enterTheme'=>'Pls Enter Theme',
     'enterContent'=>'Pls Enter Content',
+    'SendSuccess' =>'Sending email is success',
+    'SendFail'=>'Sending email is fail'
 
 ];

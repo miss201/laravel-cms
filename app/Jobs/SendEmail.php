@@ -7,6 +7,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class SendEmail implements ShouldQueue
@@ -42,6 +43,6 @@ class SendEmail implements ShouldQueue
             $theme = $this->theme;
             $message->to($to)->subject($theme);
         });
-        
+        Log::info('queue send mail');
     }
 }

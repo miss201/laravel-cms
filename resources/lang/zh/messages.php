@@ -35,4 +35,6 @@ return [
     'enterRecevierEmail'=>'请输入收件人',
     'enterTheme'=>'请输入主题',
     'enterContent'=>'请输入内容',
+    'SendSuccess' =>'邮件发送成功',
+    'SendFail'=>'邮件发送失败'
 ];
