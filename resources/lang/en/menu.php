@@ -26,5 +26,9 @@ return [
     'no'=>'No',
     'deleteSuccess'=>'Delete Success.',
     'deleteFail'=>'Delete Fail.',
-
+    'sendEmail'=>'Send Email',
+    'receiveremail'=>'Receiver email',
+    'theme'=>'Theme',
+    'emailcontent'=>'Email Content',
+    'send'=>'Send',
 ];

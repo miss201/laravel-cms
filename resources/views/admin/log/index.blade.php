@@ -12,7 +12,7 @@
 @section('admin-content')
     <div id="content" class="content">
         <!-- begin page-header -->
-        <h1 class="page-header">{{trans('menu.dashboard')}}
+        <h1 class="page-header">{{trans('menu.systemSettings')}}
             <small>{{trans('menu.logList')}}</small>
         </h1>
         <!-- end page-header -->

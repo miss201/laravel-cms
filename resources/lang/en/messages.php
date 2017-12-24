@@ -10,7 +10,7 @@ return [
     'welcome' => 'Welcome to our application',
     'languageSwitching' => 'Language switching',
     'lang-en' => 'english',
-    'lang-zh' => 'chinese',
+    'lang-zh' => '中文',
     'backend' => 'backend',
     'login' => 'login',
     'reg' => 'register',
@@ -32,5 +32,8 @@ return [
     'code'=>'code',
     'refreshImg'=>'Refresh Code',
     'codeError'=>'Code is wrong,please confirm before entering',
+    'enterRecevierEmail'=>'Pls Enter Email',
+    'enterTheme'=>'Pls Enter Theme',
+    'enterContent'=>'Pls Enter Content',
 
 ];

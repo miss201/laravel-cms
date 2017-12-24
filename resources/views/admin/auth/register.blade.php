@@ -27,7 +27,13 @@
                             <li class="dropdown navbar-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="{{ asset('asset_admin/assets/img/user-1.jpg') }}" alt="" />
-                                    <span class="hidden-xs">{{ trans('messages.languageSwitching') }}</span> <b class="caret"></b>
+                                    <span class="hidden-xs">
+                                        @if('zh'== Session::get('lang') )
+                                            {{trans('messages.lang-zh')}}
+                                        @else
+                                            {{trans('messages.lang-en')}}
+                                        @endif
+                                    </span> <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu animated fadeInLeft">
                                     <li><a  siteUrl="{{url('admin/lang','en')}}" class="lang">{{trans('messages.lang-en')}}</a></li>

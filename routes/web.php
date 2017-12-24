@@ -43,6 +43,10 @@ Route::group(['middleware' => ['web']], function () {
 
         //验证码
         Route::get('captcha/{tmp}','CodeController@captcha');
+
+        //邮件发送
+        Route::get('email/index','EmailController@index');
+        Route::any('email/send','EmailController@send');
     });
 });
 

@@ -26,5 +26,10 @@ return [
     'no'=>'否',
     'deleteSuccess'=>'删除成功',
     'deleteFail'=>'删除失败',
+    'sendEmail'=>'发送邮件',
+    'receiveremail'=>'收件人',
+    'theme'=>'主题',
+    'emailcontent'=>'邮件内容',
+    'send'=>'发送邮件',
 
 ];

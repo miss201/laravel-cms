@@ -22,14 +22,13 @@
             <li class="has-sub active">
                 <a href="javascript:;"><b class="glyphicon glyphicon-th-large"></b><span> {{trans('menu.systemSettings')}}</span></a>
                 <ul class="sub-menu">
-                    <li class="has-sub "><a href="{{url('admin/admin')}}"><b class="caret pull-right"></b>{{trans('menu.userMgmt')}}</a></li>
-                    <li class="has-sub active"><a href="{{url('admin/log')}}"><b class="caret pull-right"></b>{{trans('menu.logMgmt')}}</a></li>
+                    {{--<li class="has-sub "><a href="{{url('admin/admin')}}"><b class="caret pull-right"></b>{{trans('menu.userMgmt')}}</a></li>--}}
                     {{--<li><a href="{{url('admin/menu')}}"><b class="caret pull-right"></b>菜单管理</a></li>--}}
                     {{--<li><a href="{{url('admin/role')}}"><b class="caret pull-right"></b>角色管理</a></li>--}}
-                    {{--<li><a href="#"><b class="caret pull-right"></b>用户管理</a></li>--}}
+                    <li class="has-sub active"><a href="{{url('admin/log')}}"><b class="caret pull-right"></b>{{trans('menu.logMgmt')}}</a></li>
+                    <li><a href="{{url('admin/email/index')}}"><b class="caret pull-right"></b>{{trans('menu.sendEmail')}}</a></li>
                 </ul>
             </li>
-
 
             <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i
                             class="fa fa-angle-double-left"></i></a></li>

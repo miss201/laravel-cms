@@ -9,7 +9,7 @@
 return [
     'welcome' => '欢迎使用',
     'languageSwitching' => '语言切换',
-    'lang-en' => '英文',
+    'lang-en' => 'English',
     'lang-zh' => '中文',
     'backend' => '后台',
     'login' => '登录',
@@ -31,5 +31,8 @@ return [
     'enterSiteUrl'=>'请输入网址',
     'code'=>'验证码',
     'refreshImg'=>'刷新验证码',
-    'codeError'=>'验证码错误'
+    'codeError'=>'验证码错误',
+    'enterRecevierEmail'=>'请输入收件人',
+    'enterTheme'=>'请输入主题',
+    'enterContent'=>'请输入内容',
 ];
