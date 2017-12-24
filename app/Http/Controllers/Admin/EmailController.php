@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Jobs\SendEmail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
@@ -29,12 +30,11 @@ class EmailController extends Controller
             return back()->withErrors($validator)->withInput();
         } else {
             $content = $this->request->input('content');
-            Mail::raw($content, function ($message) {
-                $to = $this->request->input('email');
-                $theme = $this->request->input('theme');
-                $message->to($to)->subject($theme);
-            });
-            $info = empty(Mail::failures()) ? '发送成功' : '发送失败';
+            $to = $this->request->input('email');
+            $theme = $this->request->input('theme');
+            $this->dispatch(new SendEmail($to,$theme,$content));
+//            $info = empty(Mail::failures()) ? '发送成功' : '发送失败';
+            $info='Success';
             return Redirect::to('admin/email/index')->with('success', $info);
 
         }
