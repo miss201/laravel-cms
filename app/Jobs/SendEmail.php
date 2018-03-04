@@ -9,10 +9,13 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Exception;
 
 class SendEmail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
+    public $tries = 5;//最大执行次数
 
     protected $to;
     protected $theme;
@@ -43,6 +46,16 @@ class SendEmail implements ShouldQueue
             $theme = $this->theme;
             $message->to($to)->subject($theme);
         });
-        Log::info('queue send mail');
+
+        Log::info('send email');
+    }
+
+
+    /**
+     * 处理失败的任务
+     */
+    public function failed(Exception $exception){
+        $info = $this->to .$this->theme.'is failed';
+        Log::error($info);
     }
 }

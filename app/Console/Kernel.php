@@ -26,6 +26,11 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+
+        //  $schedule->exec('/home/wwwroot/default/cms/sh/mysql_back.sh')->cron('* 4 * * * *');//备份数据库
+        //授权chmod -R 777 mysql_back.sh
+        //配置crontab
+        //* * * * * php /home/wwwroot/default/cms/artisan schedule:run >> /dev/null 2>&1
     }
 
     /**

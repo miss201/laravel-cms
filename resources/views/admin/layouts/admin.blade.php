@@ -83,7 +83,7 @@
                     <ul class="dropdown-menu animated fadeInLeft">
                         <li class="arrow"></li>
                         <li><a href="javascript:;">{{trans('messages.editProfile')}}</a></li>
-                        <li><a href="javascript:;">{{trans('messages.calendar')}}</a></li>
+                        <li><a href="{{url('admin/calendar')}}">{{trans('messages.calendar')}}</a></li>
                         <li><a href="{{url('admin/setting/index')}}">{{trans('messages.siteSetting')}}</a></li>
                         <li class="divider"></li>
                         <li><a href="{{ url('admin/logout') }}">{{trans('messages.logout')}}</a></li>

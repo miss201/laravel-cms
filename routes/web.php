@@ -47,6 +47,9 @@ Route::group(['middleware' => ['web']], function () {
         //邮件发送
         Route::get('email/index','EmailController@index');
         Route::any('email/send','EmailController@send');
+
+        //日历
+        Route::get('calendar','CalendarController@index');
     });
 });
 

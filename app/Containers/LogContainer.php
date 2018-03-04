@@ -22,7 +22,7 @@ class LogContainer implements LogContract
         foreach ($logList as $key => $val) {
             $logInfoList[$key] = array(
                 'getFilename' => $val->getFilename(), //获取文件名
-                'getLinkTarget' => $val->getLinkTarget(), //获取文件链接目标文件
+                'getLinkTarget' => $val->getPathname(), //获取文件链接目标文件
                 'getMTime' => $val->getMTime(), //获取最后修改时间
                 'getSize' => \App\Helpers\getHMFilesize($val->getSize()),//文件大小，单位字节
 //                'getFileInfo'=>$val->getFileInfo()
