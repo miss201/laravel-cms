@@ -50,6 +50,10 @@ Route::group(['middleware' => ['web']], function () {
 
         //日历
         Route::get('calendar','CalendarController@index');
+
+        //分詞
+//        Route::get('seg',"SegmentationController@index");
+        Route::match(['get', 'post'],'seg',"SegmentationController@index");
     });
 });
 

@@ -182,6 +182,7 @@ return [
         App\Providers\RoleServiceProvider::class,
         App\Providers\MenuServiceProvider::class,
         App\Providers\LogServiceProvider::class,
+        App\Providers\SegmentationServiceProvider::class
 
     ],
 

@@ -10,7 +10,7 @@
     <div id="content" class="content">
 
         <!-- begin page-header -->
-        <h1 class="page-header">{{trans('menu.systemSettings')}}<small> {{trans('menu.sendEmail')}}</small></h1>
+        <h1 class="page-header">{{trans('menu.systemSettings')}}<small> 中文分詞</small></h1>
         <!-- end page-header -->
 
         <!-- begin row -->
@@ -26,7 +26,7 @@
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                         </div>
-                        <h4 class="panel-title">{{trans('menu.sendEmail')}}</h4>
+                        <h4 class="panel-title">中文分詞</h4>
                     </div>
                     @if(count($errors)>0)
                         <div class="alert alert-danger">
@@ -45,38 +45,31 @@
                         </div>
                    @endif
                     <div class="panel-body panel-form">
-                        <form class="form-horizontal form-bordered" data-parsley-validate="true" action="{{url('admin/email/send')}}" method="POST">
+                        <form class="form-horizontal form-bordered" data-parsley-validate="true" action="{{url('admin/seg')}}" method="POST">
                             {{ csrf_field() }}
                             {{--{{ method_field('PATCH') }}--}}
                             <div class="form-group">
-                                <label class="control-label col-md-2 col-sm-2" for="email">{{trans('menu.receiveremail')}} * :</label>
+                                <label class="control-label col-md-2 col-sm-2" for="info">文字 * :</label>
                                 <div class="col-md-4 col-sm-4">
-                                    <input class="form-control" type="text" name="email" placeholder="{{trans('menu.receiveremail')}}" data-parsley-required="true"  data-parsley-required-message="{{trans('messages.enterRecevierEmail')}}" value="{{ old('email') }}"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2 col-sm-2" for="theme">{{trans('menu.theme')}} * :</label>
-                                <div class="col-md-4 col-sm-4">
-                                    <input class="form-control" type="text" name="theme" placeholder="{{trans('menu.theme')}}" data-parsley-required="true"  data-parsley-required-message="{{trans('messages.enterTheme')}}" value="{{ old('theme') }}"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2 col-sm-2" for="content">{{trans('menu.emailcontent')}} * :</label>
-                                <div class="col-md-4 col-sm-4">
-                                    <textarea name="content" class="form-control" rows="3" placeholder="{{trans('menu.emailcontent')}} " data-parsley-required="true"  data-parsley-required-message="{{trans('messages.enterContent')}}" >{{ old('content') }}</textarea>
+                                    <textarea name="content" class="form-control" rows="3" placeholder="請輸入文字" data-parsley-required="true"  data-parsley-required-message="請輸入文字" ></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2 col-sm-2"></label>
                                 <div class="col-md-4 col-sm-4">
-                                    <button type="submit" class="btn btn-primary">{{trans('menu.send')}}</button>
+                                    <button type="submit" class="btn btn-primary">確定</button>
                                 </div>
                             </div>
                         </form>
                     </div>
+                    @if($result != null)
+                        <div class="alert alert-success">
+                            <ul>
+                                <li>{{print_r($result)}}</li>
+                            </ul>
+                        </div>
+                    @endif
                 </div>
                 <!-- end panel -->
             </div>
