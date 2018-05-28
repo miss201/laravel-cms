@@ -22,7 +22,6 @@ class SegmentationController extends Controller
         $this->middleware('admin');
         $this->request = $request;
         $this->segmentation =$segmentation;
-
     }
 
     /**
@@ -33,15 +32,12 @@ class SegmentationController extends Controller
     public function index(){
         $result = null;
         if(strtolower($this->request->method()) == "post"){
-
-
             $validator = $this->validateInfo($this->request->input());
             if ($validator->fails()) {
                 return back()->withErrors($validator)->withInput();
             } else {
                 $content = $this->request->input("content");
                 $result = $this->segmentation->seg($content);
-
             }
         }
         return view('admin/seg/index')->with("result",$result);
