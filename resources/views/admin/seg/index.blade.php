@@ -10,7 +10,7 @@
     <div id="content" class="content">
 
         <!-- begin page-header -->
-        <h1 class="page-header">{{trans('menu.systemSettings')}}<small> 中文分詞</small></h1>
+        <h1 class="page-header">{{trans('menu.segTools')}}<small>{{trans('menu.seg')}}</small></h1>
         <!-- end page-header -->
 
         <!-- begin row -->
@@ -26,7 +26,7 @@
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                         </div>
-                        <h4 class="panel-title">中文分詞</h4>
+                        <h4 class="panel-title">{{trans('menu.seg')}}</h4>
                     </div>
                     @if(count($errors)>0)
                         <div class="alert alert-danger">
@@ -49,16 +49,16 @@
                             {{ csrf_field() }}
                             {{--{{ method_field('PATCH') }}--}}
                             <div class="form-group">
-                                <label class="control-label col-md-2 col-sm-2" for="info">文字 * :</label>
+                                <label class="control-label col-md-2 col-sm-2" for="info">{{trans('menu.words')}} * :</label>
                                 <div class="col-md-4 col-sm-4">
-                                    <textarea name="content" class="form-control" rows="3" placeholder="請輸入文字" data-parsley-required="true"  data-parsley-required-message="請輸入文字" ></textarea>
+                                    <textarea name="content" class="form-control" rows="3" placeholder="{{trans('menu.plsenterwords')}}" data-parsley-required="true"  data-parsley-required-message="{{trans('menu.plsenterwords')}}" ></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2 col-sm-2"></label>
                                 <div class="col-md-4 col-sm-4">
-                                    <button type="submit" class="btn btn-primary">確定</button>
+                                    <button type="submit" class="btn btn-primary">{{trans('messages.submit')}}</button>
                                 </div>
                             </div>
                         </form>

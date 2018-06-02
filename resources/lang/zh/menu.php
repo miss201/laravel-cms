@@ -31,5 +31,9 @@ return [
     'theme'=>'主题',
     'emailcontent'=>'邮件内容',
     'send'=>'发送邮件',
+    'segTools'=>'分词工具',
+    'seg'=>'中文分词',
+    'words'=>'文字',
+    'plsenterwords'=>'请输入文字',
 
 ];

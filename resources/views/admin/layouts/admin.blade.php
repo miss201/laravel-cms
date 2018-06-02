@@ -137,7 +137,6 @@
         App.init();
     });
     $(function () {
-        //删除
         $('.lang').on('click', function(){
             var url = $(this).attr('siteUrl')|| "";
             alert(url);

@@ -27,7 +27,7 @@
                     {{--<li><a href="{{url('admin/role')}}"><b class="caret pull-right"></b>角色管理</a></li>--}}
                     <li class="has-sub active"><a href="{{url('admin/log')}}"><b class="caret pull-right"></b>{{trans('menu.logMgmt')}}</a></li>
                     <li><a href="{{url('admin/email/index')}}"><b class="caret pull-right"></b>{{trans('menu.sendEmail')}}</a></li>
-                    <li><a href="{{url('admin/seg')}}"><b class="caret pull-right"></b>分词工具</a></li>
+                    <li><a href="{{url('admin/seg')}}"><b class="caret pull-right"></b>{{trans('menu.segTools')}}</a></li>
                 </ul>
             </li>
 

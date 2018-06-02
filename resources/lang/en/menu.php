@@ -31,4 +31,8 @@ return [
     'theme'=>'Theme',
     'emailcontent'=>'Email Content',
     'send'=>'Send',
+    'segTools'=>'segTools',
+    'seg'=>'Chinese Word Segmentation',
+    'words'=>'Words',
+    'plsenterwords'=>'pls enter words',
 ];
