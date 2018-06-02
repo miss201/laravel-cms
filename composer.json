@@ -12,6 +12,7 @@
     "fideloper/proxy": "~3.3",
     "fukuball/jieba-php": "dev-master",
     "gregwar/captcha": "1.*",
+    "jourdon/slug": "^1.0",
     "laravel/framework": "5.5.*",
     "laravel/tinker": "~1.0"
   },
