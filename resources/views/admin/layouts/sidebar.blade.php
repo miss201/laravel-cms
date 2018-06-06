@@ -16,9 +16,13 @@
         <!-- end sidebar user -->
         <!-- begin sidebar nav -->
         <ul class="nav">
+
+
             <li class="has-sub ">
                 <a href="{{url('admin/index')}}"><b class="glyphicon glyphicon-dashboard"></b><span> {{trans('menu.dashboard')}}</span></a>
             </li>
+
+            @can('isAdmin')
             <li class="has-sub active">
                 <a href="javascript:;"><b class="glyphicon glyphicon-th-large"></b><span> {{trans('menu.systemSettings')}}</span></a>
                 <ul class="sub-menu">
@@ -30,6 +34,9 @@
                     <li><a href="{{url('admin/seg')}}"><b class="caret pull-right"></b>{{trans('menu.segTools')}}</a></li>
                 </ul>
             </li>
+            @endcan
+
+
 
 
 

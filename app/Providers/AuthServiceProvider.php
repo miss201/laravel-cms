@@ -2,7 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Gate;
+use App\Admin;
+use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -21,10 +22,24 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(GateContract $gate)
     {
-        $this->registerPolicies();
+        $this->registerPolicies($gate);
 
-        //
+        /**
+         * 檢查admin角色的權限
+         * 如果是admin 返回true
+         */
+        $gate->define('isAdmin',function($admin){
+            return $admin->user_type == 'admin';
+        });
+
+        /**
+         * 檢查author角色的權限
+         * 如果是author 返回true
+         */
+        $gate->define('isAuthor',function ($admin){
+            return $admin->user_type =="author";
+        });
     }
 }
