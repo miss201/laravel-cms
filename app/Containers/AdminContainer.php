@@ -12,12 +12,13 @@ use App\Contracts\AdminContract;
  */
 class AdminContainer implements AdminContract
 {
-    public function addAdmin($name, $email, $password)
+    public function addAdmin($name, $email, $password,$user_type)
     {
         $adminModel = new Admin();
         $adminModel->name = $name;
         $adminModel->email = $email;
         $adminModel->password = bcrypt($password);
+        $adminModel->user_type = $user_type;
         $adminModel->save();
         return $adminModel->where('email', $email)->select('id')->first();
     }

@@ -8,8 +8,8 @@
                     <a href="javascript:;"><img src="{{ asset('asset_admin/assets/img/user-13.jpg') }}" alt=""/></a>
                 </div>
                 <div class="info">
-                    {{ auth('admin')->user()->name }}
-                    <small>{{ auth('admin')->user()->email }}</small>
+                    {{ auth('admin')->user()->user_type }}
+                    <small>{{auth('admin')->user()->name.'/'.auth('admin')->user()->email }}</small>
                 </div>
             </li>
         </ul>

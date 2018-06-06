@@ -69,6 +69,16 @@
                         <div class="form-group m-b-15">
                             <input type="text" name="name" class="form-control input-lg" placeholder="{{trans('messages.name')}}" value="{{ old('name') }}"/>
                         </div>
+
+                        <div class="form-group m-b-15">
+                            <label for="name">用戶角色：</label>
+                            <select class="form-control" name="user_type">
+                                <option value="admin">admin</option>
+                                <option value="author">author</option>
+
+                            </select>
+                        </div>
+
                         <div class="form-group m-b-15">
                             <input type="text" name="email" class="form-control input-lg" placeholder="{{trans('messages.email')}}" value="{{ old('email') }}"/>
                         </div>

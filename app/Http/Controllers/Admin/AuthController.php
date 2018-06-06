@@ -78,7 +78,7 @@ class AuthController extends Controller
                 if ($code != $this->request->input('code')) {
                     return back()->with('error', trans('messages.codeError'))->withInput();
                 }
-                $admin = $this->adminContainer->addAdmin($this->request->input('name'), $this->request->input('email'), $this->request->input('password'));
+                $admin = $this->adminContainer->addAdmin($this->request->input('name'), $this->request->input('email'), $this->request->input('password'),$this->request->input('user_type'));
                 return Redirect::to('admin/login')->with('success', trans('messages.registerSuccess'));
             }
 

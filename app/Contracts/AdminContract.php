@@ -18,5 +18,5 @@ interface AdminContract
      * @param $password
      * @return  $adminId
      */
-    public function addAdmin($name, $email, $password);
+    public function addAdmin($name, $email, $password, $user_type);
 }
